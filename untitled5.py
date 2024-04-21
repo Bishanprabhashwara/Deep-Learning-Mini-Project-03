@@ -16,6 +16,8 @@ from keras.models import Model
 from keras.layers import Input, Embedding, Dense, Masking
 from keras.layers import Attention, LayerNormalization, Dropout
 from keras.optimizers import Adam
+import os
+import tensorflow as tf
 
 from google.colab import drive
 drive.mount('/content/drive')
@@ -412,3 +414,11 @@ translated_sentence = decode_sequence(input_sentence)
 
 # Print the translated sentence
 print("Sinhala translation:", translated_sentence)
+
+from google.colab import drive
+
+# Mount Google Drive
+drive.mount('/content/drive')
+
+# Save the trained model to Google Drive
+model.save('/content/drive/My Drive/trained_model.h5')
